@@ -1,0 +1,29 @@
+<div class="home" data-ng-controller="homeController as home">
+	<div class="col-md-2">
+		<ul class="nav nav-pills nav-stacked" role="tablist" data-ng-repeat="menu in home.menu">
+		  <li role="presentation" data-ng-class="{active: home.activemenu == menu.name}"><a href="#">{{menu.name}}</a></li>
+		</ul>
+	</div>
+	<div class="col-md-10">
+		<div data-ng-show="home.activemenu == 'Feed'" data-ng-controller="feedController as feed">
+			<div class="text-center">
+				<form class="form-inline" role="form" name="loginForm" 
+				data-ng-submit="feed.validateFeed();">
+					<div class="form-group">
+						<input type="text" invalid-message="{{feed.strings.feed_required}}"
+						data-ng-model="feed.feed.value" 
+						class="form-control" id="feed" data-ng-maxlength=255 required 
+						placeholder="{{feed.strings.feed}}">
+					</div>
+					<button type="submit" class="btn btn-primary">{{feed.strings.post}}</button>
+						<div animate remove="remove($index)" ng-repeat="feed in feeds">
+							<div class="glyphicon glyphicon-remove"></div>
+							<div></div>
+							<div>{{feed}}</div>
+							<div> {{date | date:'dd-MM-yyyy hh:mm a'}}</div>
+						</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
