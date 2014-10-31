@@ -9,5 +9,10 @@
 			{'name': 'Feed'}, 
 			{'name': 'Profile'}
 		];
+		
+		this.changeMenu = function(menuName) {
+			alert(menuName);
+			this.activemenu = menuName;
+		};
 	});	
 })();

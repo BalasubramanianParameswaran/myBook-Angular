@@ -22,7 +22,9 @@
 		};
 	
 		this.images = {
-			
+			//'logo': 'img/logo.png',
+			//'logo_size': 100,
+			//'logo_text': 'img/logo_text.png'
 		};
 		
 		this.strings = {
@@ -43,6 +45,8 @@
 			if (this.login.username === this.credential.username
 				&& this.login.username === this.credential.password) {
 				this.credential.signedin = true;
+				this.credential.username = "";
+				this.credential.password = "";
 				$location.path('/home');
 			} else {
 				
@@ -53,7 +57,12 @@
 				usernameFld.setCustomValidity(this.strings.signin_invalid);
 			}
 		};
+		this.validateAuthentication = function() {
 		
+			if ($location.path() == '/home' && !this.credential.signedin) {
+				$location.path('/');
+			}
+		};
 		this.signout = function() {
 			this.credential.signedin = false;
 			$location.path('/home');
