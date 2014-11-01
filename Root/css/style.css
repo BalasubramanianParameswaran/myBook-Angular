@@ -52,6 +52,26 @@
 	//background: linear-gradient(181deg, rgb(66, 173, 255) 2%, rgb(16, 81, 124) 50%);
 }
 
+.feed-txt{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 30px;
+}
+.close-icon{
+	float: right;
+}
+.feed-img{
+	display: block;
+	float: left;
+}
+
+.odd {
+  background: #C6F3F5;
+}
+.even {
+  background: #92D2F0;
+}
+
+
 .home {
 	padding-top: 10px;
 	padding-bottom: 10px;

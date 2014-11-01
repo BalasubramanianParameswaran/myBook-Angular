@@ -10,7 +10,10 @@
 			'type': '',
 			'value': ''
 		};
-		
+		this.image = {
+			'logo': 'img/book-review.gif',
+			'logo_size': 100,
+		};
 		this.strings = {
 			'feed_required': 'Please enter the URL/text feed',
 			'feed': 'Text feed or URL feed',

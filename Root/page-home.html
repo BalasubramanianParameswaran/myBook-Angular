@@ -16,10 +16,10 @@
 						placeholder="{{feed.strings.feed}}">
 					</div>
 					<button type="submit" class="btn btn-primary">{{feed.strings.post}}</button>
-						<div animate remove="remove($index)" ng-repeat="feed in feeds">
-							<div class="glyphicon glyphicon-remove"></div>
-							<div></div>
-							<div>{{feed}}</div>
+						<div animate remove="remove($index)" ng-repeat="feed in feeds" ng-class-odd="'odd'" ng-class-even="'even'" class="feed">
+							<div class="glyphicon glyphicon-remove close-icon"></div>
+							<div id="image" class="feed-img"><img src="img/book-review.gif" width="100" height="60"></div>
+							<div class="feed-txt">{{feed}}</div>
 							<div> {{date | date:'dd-MM-yyyy hh:mm a'}}</div>
 						</div>
 				</form>
