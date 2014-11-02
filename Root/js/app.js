@@ -1,5 +1,9 @@
 (function() {
-	var app = angular.module('myBook', ['ngRoute','directives', 'home', 'feed']);
+	var app = angular.module('myBook', ['ngRoute','directives', 'home', 'feed', 'profile']);
+	
+	app.factory("myBookService", function(){
+	  return {profileImage: 'img/empty.png'};
+	});
 	
 	app.config(function($routeProvider) {
 		$routeProvider
@@ -57,15 +61,17 @@
 				usernameFld.setCustomValidity(this.strings.signin_invalid);
 			}
 		};
+		
 		this.validateAuthentication = function() {
 		
 			if ($location.path() == '/home' && !this.credential.signedin) {
 				$location.path('/');
 			}
 		};
+		
 		this.signout = function() {
 			this.credential.signedin = false;
-			$location.path('/home');
+			$location.path('/');
 		};
 	}]);
 })();
