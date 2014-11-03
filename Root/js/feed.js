@@ -31,7 +31,9 @@
 					$scope.feeds.push(this.feed.value);	
 		};
 		$scope.remove = function(index) {
-				data.push($scope.feeds.splice(index, 1)[0]);
+				if (confirm("Are you sure that you want to delete \""+$scope.feeds[index]+"\"") == true) {
+					data.push($scope.feeds.splice(index, 1)[0]);
+					}
 			};
 			$scope.date = new Date();
 	});	
