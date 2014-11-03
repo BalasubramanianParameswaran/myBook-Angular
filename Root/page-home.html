@@ -27,7 +27,7 @@
 						<div  ng-repeat="feed in feeds" ng-class-odd="'odd'" ng-class-even="'even'" class="feed jumbotron">
 							<div animate remove="remove($index)" class="glyphicon glyphicon-remove close-icon"></div>
 							<div id="image" class="feed-img"><img src="img/book-review.gif" width="100" height="60"></div>
-							<div class="feed-txt">{{feed}}</div>
+							<div class="feed-txt" ng-click="redirectUrl(feed)">{{feed}}</div>
 							<div> {{date | date:'dd-MM-yyyy hh:mm a'}}</div>
 						</div>
 				</form>
@@ -35,8 +35,10 @@
 		</div>
 		<div class="profile" data-ng-show="home.activemenu == 'Profile'" data-ng-controller="profileController as profile">
 			<div class="alert alert-info" data-ng-show="profile.profileSaved">Profile successfully saved!</div>
+		
 			<form class="form" role="form" name="profileForm" 
 				data-ng-submit="profile.validateProfile();">
+				<div class="col-md-5">
 				<div class="form-group">
 					<input type="text" invalid-message="{{profile.strings.name_required}}"
 					data-ng-model="profile.profile.name" 
@@ -74,12 +76,21 @@
 						placeholder="{{profile.strings.image}}"
 						fileread="profile.profile.image">
 					</div>
-					<div class="col-md-9">
+					
+				</div>
+				<br>
+				<br>
+				<br>
+				<div class="col-sm-5">
+				<button type="submit" class="btn btn-primary">{{profile.strings.save}}</button>
+				</div>
+				</div>
+				<div class="col-md-7">
 						<image data-ng-src="{{profile.profile.image}}" height="144" width="144"/>
 					</div>
-				</div>
-				<button type="submit" class="btn btn-primary">{{profile.strings.save}}</button>
 			</form>
+			
+			
 		</div>
 	</div>
 </div>

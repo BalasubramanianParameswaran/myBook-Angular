@@ -19,6 +19,12 @@
 			'feed': 'Text feed or URL feed',
 			'post': 'Post'
 		};
+		 $scope.pattern =new RegExp('^(https?:\\/\\/)?'+'((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+'((\\d{1,3}\\.){3}\\d{1,3}))'+'(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ '(\\?[;&a-z\\d%_.~+=3D-]*)?'+ '(\\#[-a-z\\d_]*)?$','i');
+		$scope.redirectUrl = function(url) {
+        if($scope.pattern.test(url)) {
+            window.open("http://"+url);
+        }
+    }
 		$scope.feeds = [];
 		 var data = [];
 		this.validateFeed = function() {

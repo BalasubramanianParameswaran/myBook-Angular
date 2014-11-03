@@ -2,7 +2,7 @@
 	var app = angular.module('myBook', ['ngRoute','directives', 'home', 'feed', 'profile']);
 	
 	app.factory("myBookService", function(){
-	  return {profileImage: 'img/empty.png'};
+	  return {profileImage: 'img/no-image.png'};
 	});
 	
 	app.config(function($routeProvider) {
