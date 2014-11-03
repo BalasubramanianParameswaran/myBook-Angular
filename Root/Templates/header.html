@@ -27,7 +27,7 @@
 					<button type="submit" class="btn btn-primary">{{header.strings.signin}}</button>
 				</form>
 				<div data-ng-hide="!header.credential.signedin">
-					Welcome {{header.credential.username}}! [<a href data-ng-click="header.signout();">Sign Out</a>]
+					Welcome {{header.credential.username}}! [<a href data-ng-click="header.signout();"><span class="glyphicon glyphicon-off"></span>Sign Out</a>]
 				</div>
 			</div>
 		</div>
